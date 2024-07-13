@@ -1,0 +1,45 @@
+.navbar-brand {
+    font-size: 24px; /* Tama�o del texto del encabezado */
+    font-weight: bold; /* Texto en negrita */
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px; /* Tama�o del texto de los enlaces */
+}
+
+body {
+    background-color: white; /* Cambia el fondo a negro */
+    color: rgb(0, 0, 0); /* Cambia el color del texto a blanco para que sea legible */
+    padding-top: 70px; /* Ajusta el espacio para el navbar fijo */
+    margin-bottom: 120px; /* Ajusta el espacio para el pie de p�gina */
+}
+ .card {
+    max-width: 300px; /* Establece un ancho m�ximo */
+    margin: 0 auto; /* Centra horizontalmente */
+    height: 400px; /* Ajusta la altura seg�n sea necesario */
+    margin-bottom: 20px; /* Espacio entre las tarjetas */
+    
+}
+.card-img-top {
+width: 400px;
+height: 300px;
+object-fit: cover; /* Para mantener la relaci�n de aspecto */
+margin-top: 20px;
+ }
+
+card.mb-4 {
+    transition: transform 0.3s ease-in-out; /* Agrega un efecto de transici�n */
+}
+.card.mb-4:hover {
+    transform: translateY(-5px); /* Eleva ligeramente la tarjeta al pasar el mouse sobre ella */
+    box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Agrega una sombra */
+}
+  
+
+h3 {
+    color: black; /* Establece el color del texto en blanco */
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-bottom: 30px; /* Agrega un margen inferior al n�mero de art�culos */
+    margin-top: 30px;
+    
+}

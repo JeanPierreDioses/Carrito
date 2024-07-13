@@ -1,0 +1,49 @@
+<!-- iniciar-sesion.component.html -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3 class="text-center">Registro</h3>
+            <form (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="nombres" class="form-label">Nombres</label>
+                    <input type="text" class="form-control" id="nombres" [(ngModel)]="new_usuario.nombres" name="nombres" required>
+                </div>
+                <div class="mb-3">
+                    <label for="apellidos" class="form-label">Apellidos</label>
+                    <input type="text" class="form-control" id="apellidos" [(ngModel)]="new_usuario.apellidos" name="apellidos" required>
+                </div>
+                <div class="mb-3">
+                    <label for="direccion" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="direccion" [(ngModel)]="new_usuario.direccion" name="direccion" required>
+                </div>
+                <div class="mb-3">
+                    <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                    <input type="date" class="form-control" id="fechaNacimiento" [(ngModel)]="new_usuario.fechaNacimiento" name="fechaNacimiento" required>
+                </div>
+                <div class="mb-3">
+                    <label for="sexo" class="form-label">Sexo</label>
+                    <select class="form-control" id="sexo" [(ngModel)]="new_usuario.sexo" name="sexo" required>
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="correo" [(ngModel)]="new_usuario.correo" name="correo" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="password" [(ngModel)]="new_usuario.password" name="password" required>
+                </div>
+                <div class="mb-3">
+                    <label for="tipoUsuario" class="form-label">Tipo de Usuario</label>
+                    <select class="form-control" id="tipoUsuario" [(ngModel)]="new_usuario.tipoUsuario" name="tipoUsuario" required>
+                        <option value="U">Cliente</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">REGISTRAR</button>
+            </form>
+        </div>
+    </div>
+</div>
+

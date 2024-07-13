@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="pth_admin">Admin Panel</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="pth_productos">Productos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="pth_admin">Usuarios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="pth_pedidos">Pedidos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="pth_detallepedidos">Detalles de Pedidos</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br>
+<div class="row justify-content-center mt-5">
+    <div class="col-md-10">
+      <h1 class="text-center mb-4">Carrito de compras</h1>
+      <table class="table table-striped table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID Pedido</th>
+                <th>ID Usuario</th>
+                <th>Fecha de Venta</th>
+                <th>Monto Total</th>
+                <th>Estado</th>
+                <th>Opciones</th>
+              </tr>
+        </thead>
+        <tbody>
+          <!-- Iteración de pedidos en el carrito -->
+          @for (pedido of arrayPedidos ; track pedido.idPedido) {
+            <tr>
+                <td>{{ pedido.idPedido }}</td>
+                <td>{{ pedido.idUsuario }}</td>
+                <td>{{ pedido.fechaVenta   }}</td>
+                <td>{{ pedido.montoTotal }}</td>
+                <td>{{ pedido.estado }}</td>
+                <td>
+                    <!-- Aquí puedes agregar botones o enlaces para las opciones (editar, eliminar, etc.)
+                    <button class="btn btn-primary" (click)="editarPedido(pedido)">Editar</button>
+                    <button class="btn btn-danger" (click)="eliminarPedido(pedido.idPedido)">Eliminar</button> -->
+                </td>
+           </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+

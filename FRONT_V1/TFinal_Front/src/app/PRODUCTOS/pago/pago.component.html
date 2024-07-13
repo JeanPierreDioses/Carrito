@@ -1,0 +1,61 @@
+<div class="row justify-content-center mt-5">
+  <div class="col-md-10">
+    <h1 class="text-center mb-4">Carrito de Compras</h1>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th>Descripción</th>
+            <th>Imagen</th>
+            <th>Cantidad</th> 
+            <th>Monto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Iteración de productos en el carrito -->
+          @for (cesto of Carro ; track cesto.idProducto) {
+            <tr>
+              <td>{{cesto.descripcion}}</td>
+              <td>
+                <img class="img-thumbnail" [src]="'img/' + cesto.imagen" alt="Imagen del producto">
+              </td>
+              <td>{{ cesto.cantidad }}</td>
+              <td>${{ cesto.montototal.toFixed(2) }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Formulario de Pago con Tarjeta -->
+<div class="row justify-content-center mt-5">
+  <div class="col-md-10 col-lg-8">
+    <h2 class="text-center mb-4">Detalles de Pago</h2>
+    <form  class="form-container">
+      <div class="mb-4">
+        <label for="nombre" class="form-label fs-5">Nombre en la Tarjeta</label>
+        <input type="text" class="form-control form-control-lg" id="nombre"  name="nombre" required>
+      </div>
+      <div class="mb-4">
+        <label for="numeroTarjeta" class="form-label fs-5">Número de Tarjeta</label>
+        <input type="text" class="form-control form-control-lg" id="numeroTarjeta"  name="numeroTarjeta" required>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <label for="fechaExpiracion" class="form-label fs-5">Fecha de Expiración</label>
+          <input type="text" class="form-control form-control-lg" id="fechaExpiracion"  name="fechaExpiracion" placeholder="MM/AA" required>
+        </div>
+        <div class="col-md-6 mb-4">
+          <label for="cvv" class="form-label fs-5">CVV</label>
+          <input type="text" class="form-control form-control-lg" id="cvv"  name="cvv" required>
+        </div>
+      </div>
+      <div class="text-center">
+        <button (click)="pagar()" class="btn btn-primary btn-lg">Confirmar Compra</button>
+      </div>
+    </form>
+  </div>
+</div>
+<br><br>

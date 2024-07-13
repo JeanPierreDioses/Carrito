@@ -1,0 +1,43 @@
+<div class="row justify-content-center mt-5">
+  <div class="col-md-10">
+    <h1 class="text-center mb-4">Carrito de compras</h1>
+    <table class="table table-striped table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Descripción</th>
+          <th>Foto</th>
+          <th>Cantidad</th>
+          <th>Monto</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Iteración de productos en el carrito -->
+        @for (cesto of Carro ; track cesto.idProducto) {
+          <tr>
+            <td>{{cesto.descripcion}}</td>
+            <td>
+              <img class="img-thumbnail" [src]="'img/' + cesto.imagen" alt="Imagen del producto">
+            </td>
+            <td>
+              <input type="number" [(ngModel)]="cesto.cantidad" (change)="actualizar_Cantidad(cesto)" class="form-control" min="1">
+            </td>
+            <td>{{ cesto.montototal | currency }}</td>
+            <td>
+              <button (click)="eliminar(cesto.idProducto)" class="btn btn-danger btn-sm">Eliminar</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3" class="text-right"><strong>Total:</strong></td>
+          <td>{{ calcularTotal() | currency }}</td>
+          <td>
+            <button (click)="procederPago()" class="btn btn-success btn-sm">Pagar</button>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="row justify-content-center mt-5">
+    <div class="col-md-8">
+      <h1 class="text-center">Lista de Productos</h1>
+      <br>
+      <div class="row">
+        @for (producto of ArrayProductos; track producto.idProducto) {
+          <div class="col-md-4">
+            <div class="card mb-4">
+
+              <img class="card-img-top img-fluid img-thumbnail" [src]="'img/' + producto.imagen" alt="Imagen del producto" style="max-height: 250px;">
+              <div class="card-body">
+                <h5 class="card-title">{{ producto.descripcion }}</h5>
+                <p class="card-text"><strong>ID:</strong> {{ producto.idProducto }}</p>
+                <p class="card-text"><strong>Precio por Unidad:</strong> {{ producto.precioUnidad | currency }}</p>
+                <p class="card-text"><strong>Stock:</strong> {{ producto.stock }}</p>
+              </div>
+              <div class="text-center mt-3">
+                <button  (click)="buy(producto.idProducto)" class="btn btn-primary mb-3 ">Añadir al carrito</button>
+              </div>
+              
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+  
+  
